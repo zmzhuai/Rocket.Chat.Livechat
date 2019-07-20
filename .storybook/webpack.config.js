@@ -9,8 +9,8 @@ module.exports = ({ config, mode }) => {
 	config.resolve.alias = Object.assign(
 		config.resolve.alias,
 		{
-			'react': `${ __dirname }/compat.js`,
-			'react-dom': `${ __dirname }/compat.js`,
+			'react': 'preact/compat',
+			'react-dom': 'preact/compat',
 		}
 	);
 
@@ -43,7 +43,7 @@ module.exports = ({ config, mode }) => {
 		new ProvidePlugin({
 			h: ['preact', 'h'],
 			Component: ['preact', 'Component'],
-			React: ['preact-compat'],
+			React: ['preact', 'compat'],
 		})
 	);
 

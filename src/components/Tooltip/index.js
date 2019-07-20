@@ -1,5 +1,4 @@
-import { h, cloneElement, Component } from 'preact';
-import createContext from 'preact-context';
+import { h, cloneElement, Component, createContext } from 'preact';
 
 import styles from './styles.scss';
 import { createClassName } from '../helpers';

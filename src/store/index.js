@@ -1,5 +1,4 @@
-import { Component } from 'preact';
-import { createContext } from 'preact-context';
+import { Component, createContext } from 'preact';
 
 import { createToken } from '../components/helpers';
 import Store from './Store';
