@@ -1,8 +1,7 @@
-/* eslint-disable quote-props */
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
-import webpackOverride from './webpackOverride.config';
 
+import webpackOverride from './webpackOverride.config';
 
 export default (config, env/* , helpers */) => {
 	if (env.production) {
@@ -11,7 +10,8 @@ export default (config, env/* , helpers */) => {
 
 	config = webpackOverride(config);
 
-	config.mode = 'production';
+	config.mode = env.production ? 'production' : 'development';
+	config.devtool = env.production ? 'source-map' : 'eval-cheap-module-source-map';
 
 	config.performance = {
 		hints: false,
@@ -108,7 +108,7 @@ export default (config, env/* , helpers */) => {
 	const definePlugin = config.plugins.find((plugin) => plugin.constructor.name === 'DefinePlugin');
 	definePlugin.definitions = {
 		...definePlugin.definitions,
-		'process': {},
+		process: {},
 		'process.env': {},
 		'process.title': 'browser',
 	};

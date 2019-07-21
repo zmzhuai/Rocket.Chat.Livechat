@@ -27,7 +27,6 @@
 	},
 	"devDependencies": {
 		"@rocket.chat/eslint-config": "^0.3.0",
-		"@storybook/addon-a11y": "^5.1.9",
 		"@storybook/addon-actions": "^5.1.9",
 		"@storybook/addon-backgrounds": "^5.1.9",
 		"@storybook/addon-centered": "^5.1.9",
@@ -41,6 +40,7 @@
 		"desvg-loader": "^0.1.0",
 		"eslint": "^5.12.1",
 		"eslint-config-synacor": "^3.0.3",
+		"eslint-plugin-import": "^2.17.2",
 		"gh-release": "^3.5.0",
 		"husky": "^1.3.1",
 		"identity-obj-proxy": "^3.0.0",
@@ -50,7 +50,7 @@
 		"lorem-ipsum": "^1.0.6",
 		"node-sass": "^4.9.3",
 		"npm-run-all": "^4.1.5",
-		"preact-cli": "3.0.0-next.14",
+		"preact-cli": "^3.0.0-rc.3",
 		"preact-compat": "^3.18.4",
 		"preact-render-spy": "^1.2.1",
 		"prompts": "^2.0.1",
@@ -59,6 +59,7 @@
 		"stylelint": "^10.1.0",
 		"stylelint-order": "^3.0.0",
 		"svg-loader": "0.0.2",
+		"uglifyjs-webpack-plugin": "^2.1.3",
 		"webpack-bundle-analyzer": "^3.0.2",
 		"webpack-cli": "^3.2.1"
 	},
@@ -76,7 +77,7 @@
 		"msgpack": "^1.0.2",
 		"preact": "^10.0.0-rc.0",
 		"preact-i18nline": "^2.0.0",
-		"preact-router": "^2.5.7",
+		"preact-router": "^3.0.1",
 		"query-string": "6.3.0",
 		"tiny-events": "^1.0.1",
 		"wolfy87-eventemitter": "^5.2.5"
