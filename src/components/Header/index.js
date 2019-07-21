@@ -1,3 +1,5 @@
+import { toChildArray } from 'preact';
+
 import styles from './styles.scss';
 import { createClassName } from '../helpers';
 
@@ -42,7 +44,7 @@ export const Title = ({ children, className, ...props }) => (
 export const SubTitle = ({ children, className, ...props }) => (
 	<div
 		className={createClassName(styles, 'header__subtitle', {
-			children: children.length > 0,
+			children: toChildArray(children).length > 0,
 		}, [className])}
 		{...props}
 	>

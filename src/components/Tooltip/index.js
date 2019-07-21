@@ -1,4 +1,4 @@
-import { h, cloneElement, Component, createContext } from 'preact';
+import { h, cloneElement, Component, createContext, toChildArray } from 'preact';
 
 import styles from './styles.scss';
 import { createClassName } from '../helpers';
@@ -81,12 +81,12 @@ export class TooltipContainer extends Component {
 
 export const TooltipTrigger = ({ children, content, placement }) => (
 	<TooltipContext.Consumer>
-		{({ showTooltip, hideTooltip }) => cloneElement(children[0], {
+		{({ showTooltip, hideTooltip }) => toChildArray(children).map((child) => cloneElement(child, {
 			onMouseEnter: (event) => showTooltip(event, { content, placement }),
 			onMouseLeave: (event) => hideTooltip(event),
 			onFocusCapture: (event) => showTooltip(event, { content, placement }),
 			onBlurCapture: (event) => hideTooltip(event),
-		})}
+		}))}
 	</TooltipContext.Consumer>
 );
 
