@@ -211,6 +211,7 @@ export class ChatContainer extends Component {
 	}
 
 	canFinishChat = () => {
+		return false;
 		const { room, connecting } = this.props;
 		return (room !== undefined) || connecting;
 	}

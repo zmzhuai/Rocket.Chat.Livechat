@@ -6,12 +6,14 @@ import { Livechat } from '../api';
 import { createToken } from '../components/helpers';
 import { loadConfig } from './main';
 import { parentCall } from './parentCall';
+import { loadMessages } from './room';
 
 const createOrUpdateGuest = async (guest) => {
 	const { token } = guest;
 	token && await store.setState({ token });
 	await Livechat.grantVisitor({ visitor: { ...guest } });
 	await loadConfig();
+	await loadMessages();
 };
 
 const updateIframeGuestData = (data) => {
@@ -81,6 +83,7 @@ const api = {
 		}
 		store.setState({ token, iframe: { ...iframe, guest: { ...guest, token } } });
 		await loadConfig();
+		await loadMessages();
 	},
 
 	setGuestName(name) {
